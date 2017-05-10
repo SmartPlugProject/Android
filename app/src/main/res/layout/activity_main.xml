@@ -10,12 +10,14 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginRight="32dp"
-        app:cv_subtitleText=""/>
+        app:cv_subtitleText=""
+        app:cv_titleSize="18sp"/>
     <com.github.pavlospt.CircleView
         android:id="@+id/price"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="32dp"
-        app:cv_subtitleText=""/>
+        app:cv_subtitleText=""
+        app:cv_titleSize="18sp"/>
 </LinearLayout>
 

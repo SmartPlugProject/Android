@@ -8,18 +8,28 @@ import java.util.List;
  */
 
 public class Sensor {
-    private String id;
+    private String _id;
+    private String name;
     private String device;
     private List<Value> values;
 
-
+    public Sensor() {
+    }
 
     public String getId() {
-        return id;
+        return _id;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this._id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDevice() {
@@ -42,6 +52,9 @@ public class Sensor {
         private Date timestamp;
         private float voltage;
         private float current;
+
+        public Value() {
+        }
 
         public Date getTimestamp() {
             return timestamp;
