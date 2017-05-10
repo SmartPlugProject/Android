@@ -1,5 +1,6 @@
 package eduardo.alexsander.com.smartplugandroid;
 
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -45,7 +46,12 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         SensorAPI sensorAPI = retrofit.create(SensorAPI.class);
 
-        Call<Sensor> call = sensorAPI.searchSensorById(id);
+        final Call<Sensor> call = sensorAPI.searchSensorById(id);
+
+        getSensorData(call);
+    }
+
+    private void getSensorData(Call<Sensor> call) {
         call.enqueue(new Callback<Sensor>() {
             @Override
             public void onResponse(Call<Sensor> call, Response<Sensor> response) {
@@ -65,7 +71,5 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-
     }
 }
