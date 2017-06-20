@@ -2,6 +2,8 @@ package eduardo.alexsander.com.smartplugandroid;
 
 import java.util.List;
 
+import eduardo.alexsander.com.smartplugandroid.model.Sensor;
+import eduardo.alexsander.com.smartplugandroid.model.SensorList;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
@@ -11,9 +13,11 @@ import retrofit2.http.Path;
  */
 
 public interface SensorAPI {
-    @GET("sensor/list")
-    Call<List<Sensor>> getSensorList();
+    String BASE_URL = "http://smart-plug-1.herokuapp.com/sensor/";
 
-    @GET("sensor/searchById/{id}")
-    Call<Sensor> searchSensorById(@Path("id") String id);
+    @GET("list")
+    Call<SensorList> getSensorList();
+
+    @GET("searchById/{id}")
+    Call<Sensor> getSensorById(@Path("id") String id);
 }
